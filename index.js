@@ -36,17 +36,18 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
      // const cityLength = city.length > 0; 
      // const nameLength = name.length > 0; 
       
-      const interval = 12 / no_of_times;
+      const interval = 12 / (no_of_times - 1);
+      console.log("To be reminded ", no_of_times, "times, in intervals of ", interval);
 
-      if(cityLength && nameLength){
-          agent.add(`I got your city and name`);
-      } else if(!cityLength && nameLength){
-          agent.add(`I got your name but not your city`);
-      } else if(cityLength && !nameLength){
-          agent.add(`I got your city but not your name`);
-      } else {
-          agent.add(`Did not get anything! What is your name and city?`);
-      }
+      // if(cityLength && nameLength){
+      //     agent.add(`I got your city and name`);
+      // } else if(!cityLength && nameLength){
+      //     agent.add(`I got your name but not your city`);
+      // } else if(cityLength && !nameLength){
+      //     agent.add(`I got your city but not your name`);
+      // } else {
+      //     agent.add(`Did not get anything! What is your name and city?`);
+      // }
   }
 
   // // Uncomment and edit to make your own intent handler
@@ -82,7 +83,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   let intentMap = new Map();
   intentMap.set('Default Welcome Intent', welcome);
   intentMap.set('Default Fallback Intent', fallback);
-  intentMap.set('random',random);
+  intentMap.set('',random);
   intentMap.set('addreminders',addreminders);
   // intentMap.set('your intent name here', yourFunctionHandler);
   // intentMap.set('your intent name here', googleAssistantHandler);
