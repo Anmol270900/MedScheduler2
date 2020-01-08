@@ -1,8 +1,10 @@
 # MedScheduler
 
+Theme: Healthcare
+
 ## The Problem: 
 
-Medical Prescriptions having more than a dozen of medicines each having different no of times to be applied per day and different number of days of application can be very difficult to manage.
+Medical Prescriptions having more than a dozen of medicines each having different number of times to be applied per day and different number of days of application can be very difficult to manage.
 
 ## The Solution: 
 
@@ -10,7 +12,9 @@ The app interacts with the user through voice messages and chatbots to extract i
 
 This information is then used to exactly calculate the length of intervals between two intakes in a window (eg. 9AM to 9PM) and set reminders at the time of medicine intake.
 
-** Link to the Test version of assistant app working through Dialogflow and connected to the API: **
+**Technologies used:** Node.js, Dialogflow, Google assistant, Amazon Alexa Reminder API
+
+**Link to the Test version of assistant app working through Dialogflow and connected to the API:**
 https://console.actions.google.com/project/medscheduler-vluxdo/simulator/?pli=1
 
 ## Sample conversation: 
@@ -34,9 +38,14 @@ https://console.actions.google.com/project/medscheduler-vluxdo/simulator/?pli=1
 
     User:   4 days
 
-    MedScheduler:     You will be reminded to take medicine Paracetamol, 5 times between 9AM to 9PM in intervals of 3 hours.
+    MedScheduler:     You will be reminded to take medicine Paracetamol, 
+                       5 times between 9AM to 9PM in intervals of 3 hours.
                         Reminder 1 at 900 hours, 
                         Reminder 2 at 1200 hours, 
                         Reminder 3 at 1500 hours, 
                         Reminder 4 at 1800 hours, 
                         Reminder 5 at 2100 hours, 
+
+    Reminders would be added at the mentioned times.
+
+**Link to chatbot** : https://bot.dialogflow.com/06b95237-ad65-463c-826a-e7d6b71c3a71
