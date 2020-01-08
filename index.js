@@ -1,5 +1,3 @@
-// See https://github.com/dialogflow/dialogflow-fulfillment-nodejs
-// for Dialogflow fulfillment library docs, samples, and to report issues
 'use strict';
  
 const functions = require('firebase-functions');
@@ -30,13 +28,19 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   
   function addreminders(agent) {
       const medicine = agent.parameters['given-name'];
-      const no_of_times = agent.parameters['number'];
-      const no_of_days = agent.parameters['duration']
-      
+      const no_of_times = agent.parameters.number;
+      const no_of_days = agent.parameters.duration;
+      var i;
      // const cityLength = city.length > 0; 
      // const nameLength = name.length > 0; 
       
       const interval = 12 / (no_of_times - 1);
+    	agent.add(`You will be reminded to take medicine ${medicine}, ${no_of_times} times between 9AM to 9PM in intervals of ${interval} hours.`);
+    	for(i = 0; i < no_of_times; i++)
+        {
+          agent.add(`Reminder ${i + 1} at ${9 + interval*i}, `);
+        }
+    	agent.add(`You will be reminded to take medicine ${medicine}, ${no_of_times} times between 9AM to 9PM in intervals of ${interval} hours.`);
       console.log("To be reminded ", no_of_times, "times, in intervals of ", interval);
 
       // if(cityLength && nameLength){
@@ -54,8 +58,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   let intentMap = new Map();
   intentMap.set('Default Welcome Intent', welcome);
   intentMap.set('Default Fallback Intent', fallback);
-  intentMap.set('Medicine Scheduler',random);
-  intentMap.set('addreminders', addreminders);
+  // intentMap.set('Medicine Scheduler',random);
+  intentMap.set('Medicine Scheduler', addreminders);
   // intentMap.set('your intent name here', yourFunctionHandler);
   // intentMap.set('your intent name here', googleAssistantHandler);
   agent.handleRequest(intentMap);
