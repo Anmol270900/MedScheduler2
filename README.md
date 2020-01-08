@@ -1,10 +1,19 @@
-MedScheduler
+# MedScheduler
 
+## The Problem: 
 
-Link to the Test version of assistant app working through Dialogflow:
+    Medical Prescriptions having more than a dozen of medicines each having different no of times to be applied per day and different number of days of application can be very difficult to manage.
+
+## The Solution: 
+
+    The app interacts with the user through voice messages and chatbots to extract information like "Name of medicines", "Number of times" each has to be applied per day and "Number of days" for which each has to be applied.
+
+    This information is then used to exactly calculate the length of intervals between two intakes in a window (eg. 9AM to 9PM) and set reminders at the time of medicine intake.
+
+** Link to the Test version of assistant app working through Dialogflow and connected to the API: **
 https://console.actions.google.com/project/medscheduler-vluxdo/simulator/?pli=1
 
-Sample conversation: 
+## Sample conversation: 
 
     User:   Talk to Med Scheduler
 
