@@ -38,20 +38,11 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     	agent.add(`You will be reminded to take medicine ${medicine}, ${no_of_times} times between 9AM to 9PM in intervals of ${interval} hours.`);
     	for(i = 0; i < no_of_times; i++)
         {
-          agent.add(`Reminder ${i + 1} at ${9 + interval*i}, `);
+          agent.add(`Reminder ${i + 1} at ${9 + interval*i}00 hours, `);
         }
-    	agent.add(`You will be reminded to take medicine ${medicine}, ${no_of_times} times between 9AM to 9PM in intervals of ${interval} hours.`);
+    	// agent.add(`You will be reminded to take medicine ${medicine}, ${no_of_times} times between 9AM to 9PM in intervals of ${interval} hours.`);
       console.log("To be reminded ", no_of_times, "times, in intervals of ", interval);
 
-      // if(cityLength && nameLength){
-      //     agent.add(`I got your city and name`);
-      // } else if(!cityLength && nameLength){
-      //     agent.add(`I got your name but not your city`);
-      // } else if(cityLength && !nameLength){
-      //     agent.add(`I got your city but not your name`);
-      // } else {
-      //     agent.add(`Did not get anything! What is your name and city?`);
-      // }
   }
 
   
@@ -60,7 +51,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   intentMap.set('Default Fallback Intent', fallback);
   // intentMap.set('Medicine Scheduler',random);
   intentMap.set('Medicine Scheduler', addreminders);
-  // intentMap.set('your intent name here', yourFunctionHandler);
-  // intentMap.set('your intent name here', googleAssistantHandler);
+  // intentMap.set('', yourFunctionHandler);
+  // intentMap.set('', googleAssistantHandler);
   agent.handleRequest(intentMap);
 });
