@@ -47,4 +47,3 @@ This information is then used to exactly calculate the length of intervals betwe
 
     Reminders would be added at the mentioned times.
 
-**Link to chatbot** : https://bot.dialogflow.com/06b95237-ad65-463c-826a-e7d6b71c3a71
