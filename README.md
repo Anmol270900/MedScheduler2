@@ -14,8 +14,7 @@ This information is then used to exactly calculate the length of intervals betwe
 
 **Technologies used:** Node.js, Dialogflow, Google assistant, Amazon Alexa Reminder API
 
-**Link to the Test version of assistant app working through Dialogflow and connected to the API:**
-https://console.actions.google.com/project/medscheduler-vluxdo/simulator/?pli=1
+**Link to chatbot** : https://bot.dialogflow.com/06b95237-ad65-463c-826a-e7d6b71c3a71
 
 ## Sample conversation: 
 
